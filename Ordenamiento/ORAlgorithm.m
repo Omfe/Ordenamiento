@@ -120,8 +120,8 @@ NSString *ORShellSortAlgorithmName = @"Shell Sort";
             secondPosition = [self.barsArray indexOfObject:shortestBarView];
             
             [self.barsArray exchangeObjectAtIndex:firstPosition withObjectAtIndex:secondPosition];
-            shortestBarView.currentPosition = secondPosition;
-            originalShortestBarView.currentPosition = firstPosition;
+            shortestBarView.currentPosition = firstPosition;
+            originalShortestBarView.currentPosition = secondPosition;
             [self.delegate algorithm:self swappedBar:shortestBarView withBar:originalShortestBarView];
             
         }
@@ -132,6 +132,14 @@ NSString *ORShellSortAlgorithmName = @"Shell Sort";
 
 - (void)startInsertionSort
 {
+    ORBarView *emptySpace;
+    ORBarView *shortestbarView;
+    
+    for (NSInteger i = 1; i < self.barsArray.count; i++) {
+        shortestbarView = [self.barsArray objectAtIndex:i];
+        
+    }
+    
     [self stopSorting];
 }
 
@@ -139,5 +147,7 @@ NSString *ORShellSortAlgorithmName = @"Shell Sort";
 {
     [self stopSorting];
 }
+
+
 
 @end
