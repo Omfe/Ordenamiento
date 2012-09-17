@@ -1,0 +1,308 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		99D8D68815F58B5300194400 /* ORAlgorithmManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 99D8D68715F58B5300194400 /* ORAlgorithmManager.m */; };
+		99D8D68C15F590A200194400 /* ORAlgorithm.m in Sources */ = {isa = PBXBuildFile; fileRef = 99D8D68B15F590A200194400 /* ORAlgorithm.m */; };
+		99D8D68F15F5928700194400 /* ORBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 99D8D68E15F5928700194400 /* ORBarView.m */; };
+		99EEA62B15EEF9E300B43730 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99EEA62A15EEF9E300B43730 /* UIKit.framework */; };
+		99EEA62D15EEF9E300B43730 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99EEA62C15EEF9E300B43730 /* Foundation.framework */; };
+		99EEA62F15EEF9E300B43730 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99EEA62E15EEF9E300B43730 /* CoreGraphics.framework */; };
+		99EEA63515EEF9E300B43730 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 99EEA63315EEF9E300B43730 /* InfoPlist.strings */; };
+		99EEA63715EEF9E300B43730 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 99EEA63615EEF9E300B43730 /* main.m */; };
+		99EEA63B15EEF9E300B43730 /* ORAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 99EEA63A15EEF9E300B43730 /* ORAppDelegate.m */; };
+		99EEA63E15EEF9E300B43730 /* ORViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 99EEA63D15EEF9E300B43730 /* ORViewController.m */; };
+		99EEA64115EEF9E300B43730 /* ORViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99EEA63F15EEF9E300B43730 /* ORViewController.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		99D8D68615F58B5300194400 /* ORAlgorithmManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ORAlgorithmManager.h; sourceTree = "<group>"; };
+		99D8D68715F58B5300194400 /* ORAlgorithmManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ORAlgorithmManager.m; sourceTree = "<group>"; };
+		99D8D68A15F590A200194400 /* ORAlgorithm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ORAlgorithm.h; sourceTree = "<group>"; };
+		99D8D68B15F590A200194400 /* ORAlgorithm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ORAlgorithm.m; sourceTree = "<group>"; };
+		99D8D68D15F5928700194400 /* ORBarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ORBarView.h; sourceTree = "<group>"; };
+		99D8D68E15F5928700194400 /* ORBarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ORBarView.m; sourceTree = "<group>"; };
+		99EEA62615EEF9E300B43730 /* Ordenamiento.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ordenamiento.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		99EEA62A15EEF9E300B43730 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		99EEA62C15EEF9E300B43730 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		99EEA62E15EEF9E300B43730 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		99EEA63215EEF9E300B43730 /* Ordenamiento-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Ordenamiento-Info.plist"; sourceTree = "<group>"; };
+		99EEA63415EEF9E300B43730 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		99EEA63615EEF9E300B43730 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		99EEA63815EEF9E300B43730 /* Ordenamiento-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Ordenamiento-Prefix.pch"; sourceTree = "<group>"; };
+		99EEA63915EEF9E300B43730 /* ORAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ORAppDelegate.h; sourceTree = "<group>"; };
+		99EEA63A15EEF9E300B43730 /* ORAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ORAppDelegate.m; sourceTree = "<group>"; };
+		99EEA63C15EEF9E300B43730 /* ORViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ORViewController.h; sourceTree = "<group>"; };
+		99EEA63D15EEF9E300B43730 /* ORViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ORViewController.m; sourceTree = "<group>"; };
+		99EEA64015EEF9E300B43730 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ORViewController.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		99EEA62315EEF9E300B43730 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				99EEA62B15EEF9E300B43730 /* UIKit.framework in Frameworks */,
+				99EEA62D15EEF9E300B43730 /* Foundation.framework in Frameworks */,
+				99EEA62F15EEF9E300B43730 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		99EEA61B15EEF9E300B43730 = {
+			isa = PBXGroup;
+			children = (
+				99EEA63015EEF9E300B43730 /* Ordenamiento */,
+				99EEA62915EEF9E300B43730 /* Frameworks */,
+				99EEA62715EEF9E300B43730 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		99EEA62715EEF9E300B43730 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				99EEA62615EEF9E300B43730 /* Ordenamiento.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		99EEA62915EEF9E300B43730 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				99EEA62A15EEF9E300B43730 /* UIKit.framework */,
+				99EEA62C15EEF9E300B43730 /* Foundation.framework */,
+				99EEA62E15EEF9E300B43730 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		99EEA63015EEF9E300B43730 /* Ordenamiento */ = {
+			isa = PBXGroup;
+			children = (
+				99EEA63915EEF9E300B43730 /* ORAppDelegate.h */,
+				99EEA63A15EEF9E300B43730 /* ORAppDelegate.m */,
+				99EEA63C15EEF9E300B43730 /* ORViewController.h */,
+				99EEA63D15EEF9E300B43730 /* ORViewController.m */,
+				99EEA63F15EEF9E300B43730 /* ORViewController.xib */,
+				99EEA63115EEF9E300B43730 /* Supporting Files */,
+				99D8D68615F58B5300194400 /* ORAlgorithmManager.h */,
+				99D8D68715F58B5300194400 /* ORAlgorithmManager.m */,
+				99D8D68A15F590A200194400 /* ORAlgorithm.h */,
+				99D8D68B15F590A200194400 /* ORAlgorithm.m */,
+				99D8D68D15F5928700194400 /* ORBarView.h */,
+				99D8D68E15F5928700194400 /* ORBarView.m */,
+			);
+			path = Ordenamiento;
+			sourceTree = "<group>";
+		};
+		99EEA63115EEF9E300B43730 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				99EEA63215EEF9E300B43730 /* Ordenamiento-Info.plist */,
+				99EEA63315EEF9E300B43730 /* InfoPlist.strings */,
+				99EEA63615EEF9E300B43730 /* main.m */,
+				99EEA63815EEF9E300B43730 /* Ordenamiento-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		99EEA62515EEF9E300B43730 /* Ordenamiento */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 99EEA64415EEF9E300B43730 /* Build configuration list for PBXNativeTarget "Ordenamiento" */;
+			buildPhases = (
+				99EEA62215EEF9E300B43730 /* Sources */,
+				99EEA62315EEF9E300B43730 /* Frameworks */,
+				99EEA62415EEF9E300B43730 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Ordenamiento;
+			productName = Ordenamiento;
+			productReference = 99EEA62615EEF9E300B43730 /* Ordenamiento.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		99EEA61D15EEF9E300B43730 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = OR;
+				LastUpgradeCheck = 0440;
+				ORGANIZATIONNAME = "Omar Gudino";
+			};
+			buildConfigurationList = 99EEA62015EEF9E300B43730 /* Build configuration list for PBXProject "Ordenamiento" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 99EEA61B15EEF9E300B43730;
+			productRefGroup = 99EEA62715EEF9E300B43730 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				99EEA62515EEF9E300B43730 /* Ordenamiento */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		99EEA62415EEF9E300B43730 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				99EEA63515EEF9E300B43730 /* InfoPlist.strings in Resources */,
+				99EEA64115EEF9E300B43730 /* ORViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		99EEA62215EEF9E300B43730 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				99EEA63715EEF9E300B43730 /* main.m in Sources */,
+				99EEA63B15EEF9E300B43730 /* ORAppDelegate.m in Sources */,
+				99EEA63E15EEF9E300B43730 /* ORViewController.m in Sources */,
+				99D8D68815F58B5300194400 /* ORAlgorithmManager.m in Sources */,
+				99D8D68C15F590A200194400 /* ORAlgorithm.m in Sources */,
+				99D8D68F15F5928700194400 /* ORBarView.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		99EEA63315EEF9E300B43730 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				99EEA63415EEF9E300B43730 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		99EEA63F15EEF9E300B43730 /* ORViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				99EEA64015EEF9E300B43730 /* en */,
+			);
+			name = ORViewController.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		99EEA64215EEF9E300B43730 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		99EEA64315EEF9E300B43730 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		99EEA64515EEF9E300B43730 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Ordenamiento/Ordenamiento-Prefix.pch";
+				INFOPLIST_FILE = "Ordenamiento/Ordenamiento-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		99EEA64615EEF9E300B43730 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Ordenamiento/Ordenamiento-Prefix.pch";
+				INFOPLIST_FILE = "Ordenamiento/Ordenamiento-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		99EEA62015EEF9E300B43730 /* Build configuration list for PBXProject "Ordenamiento" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				99EEA64215EEF9E300B43730 /* Debug */,
+				99EEA64315EEF9E300B43730 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		99EEA64415EEF9E300B43730 /* Build configuration list for PBXNativeTarget "Ordenamiento" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				99EEA64515EEF9E300B43730 /* Debug */,
+				99EEA64615EEF9E300B43730 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 99EEA61D15EEF9E300B43730 /* Project object */;
+}
