@@ -47,6 +47,7 @@
     self.startButton.hidden = YES;
     self.stopButton.hidden = YES;
     self.eraseButton.hidden = YES;
+    self.stopButton.enabled = NO;
 }
 
 - (void)viewDidUnload
@@ -247,7 +248,7 @@
     barHeight = 50;
     
     self.currentBarsArray = [NSMutableArray array]; //inicializar
-    for (int i = 0; i <= numberOfBars; i++) {
+    for (int i = 0; i < numberOfBars; i++) {
         barHeight = arc4random() % 250;
         frame = CGRectMake([self xOriginForPosition:i], 1, BAR_WIDTH, barHeight + 20);
         bar = [[ORBarView alloc] initWithFrame:frame];
