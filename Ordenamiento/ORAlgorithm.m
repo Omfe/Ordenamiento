@@ -154,64 +154,33 @@ NSString *ORShellSortAlgorithmName = @"Shell Sort";
 
 - (void)startInsertionSort
 {
-   /* NSInteger emptySpace;
     ORBarView *currentBarView;
+    ORBarView *comparingBarView;
     ORBarView *previousBarView;
-    ORBarView *nextPreviousBarView;
-    NSInteger firstPosition;
-    NSInteger secondPosition;
+    NSInteger currentBarViewIndex;
+    NSInteger comparingBarViewIndex;
     
-    for (NSInteger i = 1; i < self.barsArray.count - 1; i++) {
+    for (int i = 1; i < self.barsArray.count; i++) {
         currentBarView = [self.barsArray objectAtIndex:i];
-        emptySpace = i;
-        nextPreviousBarView = [self.barsArray objectAtIndex:emptySpace-1];
-        previousBarView = [self.barsArray objectAtIndex:emptySpace];
-        
-        while (nextPreviousBarView.barHeight > currentBarView.barHeight) {
-            previousBarView = [self.barsArray objectAtIndex:emptySpace-1];
-            emptySpace = emptySpace - 1;
-            if (emptySpace < 1) {
-                break;
-            }
-            nextPreviousBarView = [self.barsArray objectAtIndex:emptySpace -1];
-        }
-        
-        firstPosition = [self.barsArray indexOfObject:previousBarView];
-        secondPosition = [self.barsArray indexOfObject:currentBarView];
-        
-        [self.barsArray exchangeObjectAtIndex:firstPosition withObjectAtIndex:secondPosition];
-        currentBarView.currentPosition = firstPosition;
-        previousBarView.currentPosition = secondPosition;
         dispatch_async(dispatch_get_main_queue(), ^{
-            [self.delegate algorithm:self swappedBar:currentBarView withBar:previousBarView];
+            [self.delegate algorithm:self didSelectBar:currentBarView andDidDeselectBar:previousBarView];
         });
         sleep(1);
-
         
-    }
-    */
-    ORBarView *currentBarView;
-    ORBarView *previousBarView;
-    NSInteger i;
-    NSInteger j;
-    NSInteger currentIndex;
-    
-    for (i = 1; i < self.barsArray.count; i++) {
-        currentBarView = [self.barsArray objectAtIndex:i];
-        
-        for (j = i; j > 0 && ((ORBarView *)[self.barsArray objectAtIndex:0]).barHeight > currentBarView.barHeight ; j--) {
-            [self.barsArray exchangeObjectAtIndex:j withObjectAtIndex:j-1];
-            currentBarView.currentPosition = j-1;
-            previousBarView.currentPosition = j;
-            [self.delegate algorithm:self swappedBar:currentBarView withBar:previousBarView];
+        for (int j = i; j > 0; j--) {
+            comparingBarView = [self.barsArray objectAtIndex:j - 1];
+            if (comparingBarView.barHeight > currentBarView.barHeight) {
+                currentBarViewIndex = [self.barsArray indexOfObject:currentBarView];
+                comparingBarViewIndex = [self.barsArray indexOfObject:comparingBarView];
+                [self.barsArray exchangeObjectAtIndex:currentBarViewIndex withObjectAtIndex:comparingBarViewIndex];
+                currentBarView.currentPosition = comparingBarViewIndex;
+                comparingBarView.currentPosition = currentBarViewIndex;
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [self.delegate algorithm:self swappedBar:currentBarView withBar:comparingBarView];
+                });
+                sleep(1);
             }
-        
-        currentIndex = [self.barsArray indexOfObject:currentBarView];
-        previousBarView = [self.barsArray objectAtIndex:j];
-        [self.barsArray exchangeObjectAtIndex:j withObjectAtIndex:currentIndex];
-        currentBarView.currentPosition = currentIndex;
-        previousBarView.currentPosition = j;
-        [self.delegate algorithm:self swappedBar:currentBarView withBar:previousBarView];
+        }
     }
     
     dispatch_async(dispatch_get_main_queue(), ^{

@@ -148,23 +148,28 @@
 
 - (void)algorithm:(ORAlgorithm *)algorithm didSelectBar:(ORBarView *)bar andDidDeselectBar:(ORBarView *)oldBar
 {
-    bar.layer.borderWidth = 4;
-    if (oldBar) {
-        oldBar.layer.borderWidth = 0;
+    for (ORBarView *bar in self.barsArray) {
+        bar.layer.borderWidth = 0;
     }
+    bar.layer.borderWidth = 4;
+    //if (oldBar) {
+        //oldBar.layer.borderWidth = 0;
+    //}
 }
 
 - (void)algorithm:(ORAlgorithm *)algorithm swappedBar:(ORBarView *)bar withBar:(ORBarView *)oldBar
 {
-    CGRect frame;
-    
-    frame = bar.frame;
-    frame.origin.x = [self xOriginForPosition:bar.currentPosition];
-    bar.frame = frame;
-    
-    frame = oldBar.frame;
-    frame.origin.x = [self xOriginForPosition:oldBar.currentPosition];
-    oldBar.frame = frame;
+    [UIView animateWithDuration:0.3 animations:^{
+        CGRect frame;
+        
+        frame = bar.frame;
+        frame.origin.x = [self xOriginForPosition:bar.currentPosition];
+        bar.frame = frame;
+        
+        frame = oldBar.frame;
+        frame.origin.x = [self xOriginForPosition:oldBar.currentPosition];
+        oldBar.frame = frame;
+    }];
 }
 
 
