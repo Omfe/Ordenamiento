@@ -20,7 +20,7 @@ extern NSString *ORShellSortAlgorithmName;
 
 @required
 - (void)algorithmHasStoppedSorting:(ORAlgorithm *)algorithm;
-- (void)algorithm:(ORAlgorithm *)algorithm didSelectBar:(ORBarView *)bar andDidDeselectBar:(ORBarView *)oldBar;
+- (void)algorithm:(ORAlgorithm *)algorithm didSelectBar:(ORBarView *)bar;
 - (void)algorithm:(ORAlgorithm *)algorithm swappedBar:(ORBarView *)bar withBar:(ORBarView *)oldBar;
 
 @end
