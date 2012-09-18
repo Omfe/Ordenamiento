@@ -154,14 +154,13 @@ NSString *ORShellSortAlgorithmName = @"Shell Sort";
 {
     ORBarView *currentBarView;
     ORBarView *comparingBarView;
-    ORBarView *previousBarView;
     NSInteger currentBarViewIndex;
     NSInteger comparingBarViewIndex;
     
     for (int i = 1; i < self.barsArray.count; i++) {
         currentBarView = [self.barsArray objectAtIndex:i];
         dispatch_async(dispatch_get_main_queue(), ^{
-            [self.delegate algorithm:self didSelectBar:currentBarView andDidDeselectBar:previousBarView];
+            [self.delegate algorithm:self didSelectBar:currentBarView];
         });
         sleep(1);
         

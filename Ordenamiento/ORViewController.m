@@ -64,6 +64,12 @@
     // Release any retained subviews of the main view.
 }
 
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    [self.informationTableView flashScrollIndicators];
+}
+
 
 #pragma mark - UITableViewDataSource/Delegate Methods
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -152,9 +158,6 @@
         bar.layer.borderWidth = 0;
     }
     bar.layer.borderWidth = 4;
-    //if (oldBar) {
-        //oldBar.layer.borderWidth = 0;
-    //}
 }
 
 - (void)algorithm:(ORAlgorithm *)algorithm swappedBar:(ORBarView *)bar withBar:(ORBarView *)oldBar
@@ -176,11 +179,19 @@
 #pragma mark - IBAction Methods
 - (IBAction)startWasPressed:(id)sender
 {
+    ORBarView *barViewCopy;
+    
     self.startButton.hidden = YES;
     self.stopButton.hidden = NO;
     self.generateButton.hidden = YES;
     self.eraseButton.hidden = YES;
-    self.barsArray = [self.currentBarsArray mutableCopy];
+    
+    [self.barsArray removeAllObjects];
+    for (ORBarView *barView in self.currentBarsArray) {
+        barViewCopy = [barView copy];
+        [self.barsArray addObject:barViewCopy];
+    }
+    
     [self clearBarsView];
     [self populateBarsViewWithBarsArray:self.barsArray];
     [self.algorithmManager.currentAlgorithm starSortingBarsArray:self.barsArray];
