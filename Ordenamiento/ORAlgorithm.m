@@ -50,13 +50,21 @@ NSString *ORShellSortAlgorithmName = @"Shell Sort";
     self.sortingStartTimeDate = [NSDate date];
     
     if ([_algorithmName isEqualToString:ORBubbleSortAlgorithmName]) {
-        [self startBubbleSort];
+        dispatch_async(dispatch_get_global_queue(0, 0), ^{
+            [self startBubbleSort];
+        });
     } else if ([_algorithmName isEqualToString:ORSelectionSortAlgorithmName]) {
-        [self startSelectionSort];
+        dispatch_async(dispatch_get_global_queue(0, 0), ^{
+            [self startSelectionSort];
+        });
     } else if ([_algorithmName isEqualToString:ORInsertionSortAlgorithmName]) {
-        [self startInsertionSort];
+        dispatch_async(dispatch_get_global_queue(0, 0), ^{
+            [self startInsertionSort];
+        });
     } else if ([_algorithmName isEqualToString:ORShellSortAlgorithmName]) {
-        [self startShellSort];
+        dispatch_async(dispatch_get_global_queue(0, 0), ^{
+            [self startShellSort];
+        });
     }
 }
 
@@ -81,18 +89,26 @@ NSString *ORShellSortAlgorithmName = @"Shell Sort";
         for (NSInteger i = 0; i < self.barsArray.count - 1; i++) {
             currentBarView = [self.barsArray objectAtIndex:i];
             nextBarView = [self.barsArray objectAtIndex:i + 1];
-            [self.delegate algorithm:self didSelectBar:currentBarView andDidDeselectBar:previousBarView];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self.delegate algorithm:self didSelectBar:currentBarView andDidDeselectBar:previousBarView];
+            });
+            sleep(1);
             if (currentBarView.barHeight > nextBarView.barHeight) {
                 didSwap = YES;
                 [self.barsArray exchangeObjectAtIndex:i withObjectAtIndex:i+1];
                 currentBarView.currentPosition = i+1;
                 nextBarView.currentPosition = i;
-                [self.delegate algorithm:self swappedBar:currentBarView withBar:nextBarView];
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [self.delegate algorithm:self swappedBar:currentBarView withBar:nextBarView];
+                });
+                sleep(1);
             }
             previousBarView = currentBarView;
         }
     }
-    [self stopSorting];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self stopSorting];
+    });
 }
 
 - (void)startSelectionSort
@@ -105,7 +121,10 @@ NSString *ORShellSortAlgorithmName = @"Shell Sort";
     
     for (NSInteger i = 0; i < self.barsArray.count - 1; i++) {
         shortestBarView = [self.barsArray objectAtIndex:i];
-        [self.delegate algorithm:self didSelectBar:shortestBarView andDidDeselectBar:originalShortestBarView];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.delegate algorithm:self didSelectBar:shortestBarView andDidDeselectBar:originalShortestBarView];
+        });
+        sleep(1);
         originalShortestBarView = [self.barsArray objectAtIndex:i];
         
         for (NSInteger j = i + 1; j < self.barsArray.count; j++) {
@@ -122,12 +141,15 @@ NSString *ORShellSortAlgorithmName = @"Shell Sort";
             [self.barsArray exchangeObjectAtIndex:firstPosition withObjectAtIndex:secondPosition];
             shortestBarView.currentPosition = firstPosition;
             originalShortestBarView.currentPosition = secondPosition;
-            [self.delegate algorithm:self swappedBar:shortestBarView withBar:originalShortestBarView];
-            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self.delegate algorithm:self swappedBar:shortestBarView withBar:originalShortestBarView];
+            });
+            sleep(1);
         }
     }
-    
-    [self stopSorting];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self stopSorting];
+    });
 }
 
 - (void)startInsertionSort
@@ -145,9 +167,9 @@ NSString *ORShellSortAlgorithmName = @"Shell Sort";
 
 - (void)startShellSort
 {
-    [self stopSorting];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self stopSorting];
+    });
 }
-
-
 
 @end
