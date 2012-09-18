@@ -80,7 +80,6 @@ NSString *ORShellSortAlgorithmName = @"Shell Sort";
     BOOL didSwap;
     ORBarView *currentBarView;
     ORBarView *nextBarView;
-    ORBarView *previousBarView;
     
     didSwap = YES;
     
@@ -90,7 +89,7 @@ NSString *ORShellSortAlgorithmName = @"Shell Sort";
             currentBarView = [self.barsArray objectAtIndex:i];
             nextBarView = [self.barsArray objectAtIndex:i + 1];
             dispatch_async(dispatch_get_main_queue(), ^{
-                [self.delegate algorithm:self didSelectBar:currentBarView andDidDeselectBar:previousBarView];
+                [self.delegate algorithm:self didSelectBar:currentBarView];
             });
             sleep(1);
             if (currentBarView.barHeight > nextBarView.barHeight) {
@@ -103,7 +102,6 @@ NSString *ORShellSortAlgorithmName = @"Shell Sort";
                 });
                 sleep(1);
             }
-            previousBarView = currentBarView;
         }
     }
     dispatch_async(dispatch_get_main_queue(), ^{
@@ -122,7 +120,7 @@ NSString *ORShellSortAlgorithmName = @"Shell Sort";
     for (NSInteger i = 0; i < self.barsArray.count - 1; i++) {
         shortestBarView = [self.barsArray objectAtIndex:i];
         dispatch_async(dispatch_get_main_queue(), ^{
-            [self.delegate algorithm:self didSelectBar:shortestBarView andDidDeselectBar:originalShortestBarView];
+            [self.delegate algorithm:self didSelectBar:shortestBarView];
         });
         sleep(1);
         originalShortestBarView = [self.barsArray objectAtIndex:i];

@@ -146,7 +146,7 @@
     [self.informationTableView reloadData];
 }
 
-- (void)algorithm:(ORAlgorithm *)algorithm didSelectBar:(ORBarView *)bar andDidDeselectBar:(ORBarView *)oldBar
+- (void)algorithm:(ORAlgorithm *)algorithm didSelectBar:(ORBarView *)bar
 {
     for (ORBarView *bar in self.barsArray) {
         bar.layer.borderWidth = 0;
