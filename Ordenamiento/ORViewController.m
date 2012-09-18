@@ -152,9 +152,6 @@
         bar.layer.borderWidth = 0;
     }
     bar.layer.borderWidth = 4;
-    //if (oldBar) {
-        //oldBar.layer.borderWidth = 0;
-    //}
 }
 
 - (void)algorithm:(ORAlgorithm *)algorithm swappedBar:(ORBarView *)bar withBar:(ORBarView *)oldBar
