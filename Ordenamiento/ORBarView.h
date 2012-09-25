@@ -8,10 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ORBarView : UIView
+@interface ORBarView : UIView <NSCopying>
 
 @property (assign, nonatomic) NSInteger currentPosition;
 
++ (id)barViewWithFrame:(CGRect)frame;
 - (NSInteger)barHeight;
 
 @end

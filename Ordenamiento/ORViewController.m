@@ -186,13 +186,16 @@
     self.generateButton.hidden = YES;
     self.eraseButton.hidden = YES;
     
+    [self clearBarsView];
+    if (!self.barsArray) {
+        self.barsArray = [NSMutableArray array];
+    }
     [self.barsArray removeAllObjects];
     for (ORBarView *barView in self.currentBarsArray) {
         barViewCopy = [barView copy];
         [self.barsArray addObject:barViewCopy];
     }
     
-    [self clearBarsView];
     [self populateBarsViewWithBarsArray:self.barsArray];
     [self.algorithmManager.currentAlgorithm starSortingBarsArray:self.barsArray];
 }
@@ -267,7 +270,7 @@
     for (int i = 0; i < numberOfBars; i++) {
         barHeight = arc4random() % 250;
         frame = CGRectMake([self xOriginForPosition:i], 1, BAR_WIDTH, barHeight + 20);
-        bar = [[ORBarView alloc] initWithFrame:frame];
+        bar = [ORBarView barViewWithFrame:frame];
         bar.backgroundColor = [self randomColor];
         bar.layer.borderColor = [UIColor blackColor].CGColor;
         bar.currentPosition = i;
