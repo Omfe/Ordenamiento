@@ -1,8 +1,18 @@
-Ordenamiento
-============
+# Ordenamiento
 
-Sorting
+iPad app that implements the following sorting algorithms:
 
-**Name**: Omar Gudiño
-**Semester**: 3rd
-**Course**: Data Structure 
+* Bubble
+* Selection
+* Insertion
+* Shell
+* Merge
+
+
+## Credits
+
+**Developed by**: Omar Gudiño  
+**School**: CETYS Universidad Tijuana  
+**Course**: Data Structures  
+**Semester**: 3rd  
+**Instructor**: Jaime Ramos
