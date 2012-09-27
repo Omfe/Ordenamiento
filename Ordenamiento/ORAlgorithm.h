@@ -15,6 +15,7 @@ extern NSString *ORBubbleSortAlgorithmName;
 extern NSString *ORSelectionSortAlgorithmName;
 extern NSString *ORInsertionSortAlgorithmName;
 extern NSString *ORShellSortAlgorithmName;
+extern NSString *ORMergeSortAlgorithmName;
 
 @protocol ORAlgorithmDelegate <NSObject>
 

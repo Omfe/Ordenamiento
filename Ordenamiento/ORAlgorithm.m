@@ -13,6 +13,7 @@ NSString *ORBubbleSortAlgorithmName = @"Burbuja";
 NSString *ORSelectionSortAlgorithmName = @"Selección";
 NSString *ORInsertionSortAlgorithmName = @"Inserción";
 NSString *ORShellSortAlgorithmName = @"Shell Sort";
+NSString *ORMergeSortAlgorithmName = @"Merge Sort";
 
 @interface ORAlgorithm ()
 
@@ -65,7 +66,12 @@ NSString *ORShellSortAlgorithmName = @"Shell Sort";
         dispatch_async(dispatch_get_global_queue(0, 0), ^{
             [self startShellSort];
         });
+    } else if ([_algorithmName isEqualToString:ORMergeSortAlgorithmName]) {
+        dispatch_async(dispatch_get_global_queue(0,0), ^{
+            [self startMergeSort];
+        });
     }
+    
 }
 
 - (void)stopSorting
@@ -187,6 +193,49 @@ NSString *ORShellSortAlgorithmName = @"Shell Sort";
 
 - (void)startShellSort
 {
+    NSInteger gap;
+    NSInteger j;
+    ORBarView *currentBarView;
+    ORBarView *jBarView;
+    ORBarView *jGapBarView;
+    
+    gap = self.barsArray.count / 2;
+    
+    while (gap > 0) {
+        for (NSInteger i = gap; i < self.barsArray.count; i++) {
+            currentBarView = [self.barsArray objectAtIndex:i];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self.delegate algorithm:self didSelectBar:currentBarView];
+            });
+            sleep(1);
+            
+            for (j = i - gap; j >= 0; j -= gap) {
+                jBarView = [self.barsArray objectAtIndex:j];
+                if (jBarView.barHeight <= currentBarView.barHeight) {
+                    break;
+                }
+                
+                jGapBarView = [self.barsArray objectAtIndex:j+gap];
+                [self.barsArray exchangeObjectAtIndex:j+gap withObjectAtIndex:j];
+                jBarView.currentPosition = j + gap;
+                jGapBarView.currentPosition = j;
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [self.delegate algorithm:self swappedBar:jBarView withBar:jGapBarView];
+                });
+                sleep(1);
+            }
+        }
+        gap = gap / 2;
+    }
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self stopSorting];
+    });
+}
+
+- (void)startMergeSort
+{
+    
     dispatch_async(dispatch_get_main_queue(), ^{
         [self stopSorting];
     });

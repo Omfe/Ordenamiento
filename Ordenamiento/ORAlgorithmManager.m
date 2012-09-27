@@ -18,6 +18,7 @@
     ORAlgorithm *selectionAlgorithm;
     ORAlgorithm *insertionAlgorithm;
     ORAlgorithm *shellSortAlgorithm;
+    ORAlgorithm *mergeAlgorithm;
     
     self = [super init];
     if (self) {
@@ -25,7 +26,8 @@
         selectionAlgorithm = [[ORAlgorithm alloc] initWithAlgorithmName:ORSelectionSortAlgorithmName];
         insertionAlgorithm = [[ORAlgorithm alloc] initWithAlgorithmName:ORInsertionSortAlgorithmName];
         shellSortAlgorithm = [[ORAlgorithm alloc] initWithAlgorithmName:ORShellSortAlgorithmName];
-        _algorithmsArray = @[ bubbleAlgorithm, selectionAlgorithm, insertionAlgorithm, shellSortAlgorithm ];
+        mergeAlgorithm = [[ORAlgorithm alloc] initWithAlgorithmName:ORMergeSortAlgorithmName];
+        _algorithmsArray = @[ bubbleAlgorithm, selectionAlgorithm, insertionAlgorithm, shellSortAlgorithm, mergeAlgorithm ];
         self.currentAlgorithm = [_algorithmsArray objectAtIndex:0];
     }
     return self;
