@@ -233,9 +233,52 @@ NSString *ORMergeSortAlgorithmName = @"Merge Sort";
     });
 }
 
+- (void)mergeArrayWithLeftIndex:(NSInteger)leftIndex rightIndex:(NSInteger)rightIndex endIndex:(NSInteger)endIndex
+{
+    NSInteger left;
+    NSInteger right;
+    ORBarView *leftBarView;
+    ORBarView *rightBarView;
+    
+    if (rightIndex >= self.barsArray.count) {
+        return;
+    }
+    
+    NSLog(@"%i", leftIndex);
+    NSLog(@"%i", rightIndex);
+    NSLog(@"%i", endIndex);
+    NSLog(@"========================");
+    
+    left = leftIndex;
+    right = rightIndex;
+    for (NSInteger j = leftIndex; j < endIndex; j++) {
+        if (right >= self.barsArray.count) {
+            continue;
+        }
+        
+        leftBarView = [self.barsArray objectAtIndex:left];
+        rightBarView = [self.barsArray objectAtIndex:right];
+        if (left < rightIndex && (right >= endIndex || leftBarView.barHeight <= rightBarView.barHeight)) {
+            [self.barsArray exchangeObjectAtIndex:j withObjectAtIndex:left];
+            left = left + 1;
+        } else {
+            [self.barsArray exchangeObjectAtIndex:j withObjectAtIndex:right];
+            right = right + 1;
+        }
+    }
+}
+
 - (void)startMergeSort
 {
-    
+    NSInteger width;
+    NSInteger i;
+    //NSLog(@"%@", self.barsArray);
+    for (width = 1; width < self.barsArray.count; width = 2 * width) {
+        for (i = 0; i < self.barsArray.count; i = i + 2 * width) {
+            [self mergeArrayWithLeftIndex:i rightIndex:MIN(i + width, self.barsArray.count) endIndex:MIN(i + 2 * width, self.barsArray.count)];
+        }
+    }
+    //NSLog(@"%@", self.barsArray);
     dispatch_async(dispatch_get_main_queue(), ^{
         [self stopSorting];
     });
